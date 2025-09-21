@@ -1,0 +1,21 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "6.14.0"
+    }
+  }
+}
+
+provider "aws" {
+  region = var.aws_region
+
+  default_tags {
+    tags = {
+      Environment = "Dev"
+      Terraform   = "true"
+      Owner       = "Minh Nguyen"
+      Project     = "Ephemeral AWS Infrastructure"
+    }
+  }
+}
